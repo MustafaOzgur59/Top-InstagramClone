@@ -5,11 +5,12 @@ import { updateFollowedUserFollowers } from "../../services/firebase";
 import { updateLoggedInUserFollowing } from "../../services/firebase";
 
 const SuggestedProfile = ({
-  spDocId,
+  profileDocId,
   username,
   profileId,
   userId,
   loggedInUserDocId,
+  loggedInUserProfileId,
 }) => {
   const [followed, setFollowed] = useState(false);
 
@@ -17,7 +18,7 @@ const SuggestedProfile = ({
     setFollowed(true);
 
     await updateLoggedInUserFollowing(loggedInUserDocId, profileId, false);
-    await updateFollowedUserFollowers(spDocId, userId);
+    await updateFollowedUserFollowers(profileDocId, userId, false);
   };
 
   useEffect(() => {}, []);
@@ -36,7 +37,7 @@ const SuggestedProfile = ({
       </div>
       <div>
         <button
-          onClick={() => console.log("Follow this user")}
+          onClick={handleFollowUser}
           className="text-xs font-bold text-blue-medium"
         >
           Follow
@@ -47,7 +48,7 @@ const SuggestedProfile = ({
 };
 
 SuggestedProfile.propTypes = {
-  spDocId: PropTypes.string.isRequired,
+  profileDocId: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
   profileId: PropTypes.string.isRequired,
   userId: PropTypes.string.isRequired,

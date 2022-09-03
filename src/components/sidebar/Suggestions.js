@@ -31,9 +31,9 @@ const Suggestions = ({ userId, following, loggedInUserDocId }) => {
           return (
             <SuggestedProfile
               key={profile.docId}
-              spDocId={profile.docId}
+              profileDocId={profile.docId}
               username={profile.username}
-              profileId={profile.docId}
+              profileId={profile.userId}
               userId={userId}
               loggedInUserDocId={loggedInUserDocId}
             />
