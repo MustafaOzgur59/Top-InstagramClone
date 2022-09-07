@@ -17,8 +17,6 @@ const Suggestions = ({ userId, following, loggedInUserDocId }) => {
     }
   }, [userId]);
 
-  if (profiles) console.log(profiles);
-
   return !profiles ? (
     <Skeleton count={3} height={100} className="mt-5" />
   ) : profiles.length > 0 ? (

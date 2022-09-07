@@ -489,6 +489,9 @@ video {
 .col-span-2 {
   grid-column: span 2 / span 2;
 }
+.col-span-4 {
+  grid-column: span 4 / span 4;
+}
 .col-span-1 {
   grid-column: span 1 / span 1;
 }
@@ -516,6 +519,18 @@ video {
 }
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+.mr-4 {
+  margin-right: 1rem;
+}
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+.mr-1 {
+  margin-right: 0.25rem;
+}
+.mb-12 {
+  margin-bottom: 3rem;
 }
 .mt-5 {
   margin-top: 1.25rem;
@@ -547,6 +562,12 @@ video {
 .h-2 {
   height: 0.5rem;
 }
+.h-4 {
+  height: 1rem;
+}
+.h-6 {
+  height: 1.5rem;
+}
 .w-full {
   width: 100%;
 }
@@ -565,6 +586,9 @@ video {
 .w-6\/12 {
   width: 50%;
 }
+.w-6 {
+  width: 1.5rem;
+}
 .w-16 {
   width: 4rem;
 }
@@ -576,6 +600,10 @@ video {
 }
 .cursor-pointer {
   cursor: pointer;
+}
+.select-none {
+  -webkit-user-select: none;
+          user-select: none;
 }
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -616,6 +644,9 @@ video {
 .border-b {
   border-bottom-width: 1px;
 }
+.border-t {
+  border-top-width: 1px;
+}
 .border-gray-primary {
   --tw-border-opacity: 1;
   border-color: rgb(219 219 219 / var(--tw-border-opacity));
@@ -635,6 +666,9 @@ video {
 .bg-black-faded {
   background-color: #00000059;
 }
+.fill-red {
+  fill: #ed4956;
+}
 .p-4 {
   padding: 1rem;
 }
@@ -646,6 +680,28 @@ video {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+.py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.pl-0 {
+  padding-left: 0px;
+}
+.pr-5 {
+  padding-right: 1.25rem;
+}
+.pt-1 {
+  padding-top: 0.25rem;
+}
+.pb-4 {
+  padding-bottom: 1rem;
+}
+.pt-2 {
+  padding-top: 0.5rem;
+}
+.pb-0 {
+  padding-bottom: 0px;
+}
 .text-center {
   text-align: center;
 }
@@ -653,16 +709,19 @@ video {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
 }
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
 .font-bold {
   font-weight: 700;
+}
+.uppercase {
+  text-transform: uppercase;
 }
 .text-black-light {
   --tw-text-opacity: 1;
@@ -686,6 +745,9 @@ video {
 }
 .opacity-50 {
   opacity: 0.5;
+}
+.opacity-25 {
+  opacity: 0.25;
 }
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
