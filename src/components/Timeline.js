@@ -15,6 +15,7 @@ const Timeline = () => {
         </>
       ) : photos?.length > 0 ? (
         photos.map((content, index) => {
+          console.log("content: ", { ...content });
           return (
             <Post key={content.docId} content={content}>
               {content.imageSrc}

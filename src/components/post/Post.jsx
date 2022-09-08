@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import PropTypes from "prop-types";
 import Header from "./Header";
 import Image from "./Image";
@@ -6,10 +6,12 @@ import Actions from "./action";
 import Footer from "./Footer";
 import Comments from "./Comments";
 
-const Post = ({ content }) => {
-  // header , image, actions (like comment), comments, footer
+export default function Post({ content }) {
   const commentInput = useRef(null);
   const handleFocus = () => commentInput.current.focus();
+
+  // components
+  // -> header, image, actions (like & comment icons), footer, comments
   return (
     <div className="rounded col-span-4 border bg-white border-gray-primary mb-12">
       <Header username={content.username} />
@@ -29,7 +31,7 @@ const Post = ({ content }) => {
       />
     </div>
   );
-};
+}
 
 Post.propTypes = {
   content: PropTypes.shape({
@@ -43,5 +45,3 @@ Post.propTypes = {
     dateCreated: PropTypes.number.isRequired,
   }),
 };
-
-export default Post;

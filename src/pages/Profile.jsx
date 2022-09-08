@@ -17,7 +17,6 @@ export default function Profile() {
       if (user.length > 0) {
         setUserExists(true);
         setUser(user[0]);
-        console.log("User : ", user);
       } else {
         setUserExists(false);
         navigate(ROUTES.NOT_FOUND);

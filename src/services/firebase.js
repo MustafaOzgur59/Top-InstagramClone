@@ -103,7 +103,7 @@ export async function getPhotos(userId, following) {
       if (photo.likes.includes(userId)) {
         userLikedPhoto = true;
       }
-      const user = await getUserByUserId(userId);
+      const user = await getUserByUserId(photo.userId);
       const { username } = user[0];
       return { username, ...photo, userLikedPhoto };
     })
@@ -113,7 +113,6 @@ export async function getPhotos(userId, following) {
 
 export async function getUserPhotosByUsername(username) {
   const [user] = await getUserByUsername(username);
-  console.log("User from getUserPhotosByUsername : ", user);
   const result = await firebase
     .firestore()
     .collection("photos")
@@ -127,4 +126,46 @@ export async function getUserPhotosByUsername(username) {
     };
   });
   return photos;
+}
+
+export async function isUserFollowingProfile(
+  loggedInUserUsername,
+  profileUserId
+) {
+  const result = await firebase
+    .firestore()
+    .collection("users")
+    .where("username", "==", loggedInUserUsername)
+    .where("following", "array-contains", profileUserId)
+    .get();
+
+  const [response = {}] = result.docs.map((item) => {
+    return { ...item.data(), docId: item.id };
+  });
+  return response.userId;
+}
+
+export async function toggleFollow(
+  isFollowingProfile,
+  activeUserDocId,
+  profileDocId,
+  profileUserId,
+  followingUserId
+) {
+  console.log("isFollowingProfile: " + isFollowingProfile);
+  console.log("activeUserDocId: " + activeUserDocId);
+  console.log("profileDocId: " + profileDocId);
+  console.log("profileUserId: " + profileUserId);
+  console.log("followingUserId: " + followingUserId);
+  await updateLoggedInUserFollowing(
+    activeUserDocId,
+    profileUserId,
+    isFollowingProfile
+  );
+
+  await updateFollowedUserFollowers(
+    profileDocId,
+    followingUserId,
+    isFollowingProfile
+  );
 }
