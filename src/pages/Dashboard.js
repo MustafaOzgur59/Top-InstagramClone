@@ -1,9 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useEffect } from "react";
 import Header from "../components/Header";
 import Timeline from "../components/Timeline";
 import Sidebar from "../components/sidebar";
-import UserContext from "../context/user";
 
 const Dashboard = () => {
   useEffect(() => {

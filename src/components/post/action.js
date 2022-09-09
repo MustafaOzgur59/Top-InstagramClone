@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import UserContext from "../../context/user";
 import FirebaseContext from "../../context/firebase";

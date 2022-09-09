@@ -22,6 +22,7 @@
     "react-scripts:start": "timeout 5 && react-scripts start",
     "react-scripts:dist": "react-scripts build",
     "start": "run-p watch:css react-scripts:start",
+    "reactBuild": "react-scripts build",
     "build": "run-s build:css react-scripts:dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

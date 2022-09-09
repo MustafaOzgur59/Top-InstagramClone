@@ -15,7 +15,7 @@ const Suggestions = ({ userId, following, loggedInUserDocId }) => {
     if (userId) {
       suggestedProfiles();
     }
-  }, [userId]);
+  }, [userId, following]);
 
   return !profiles ? (
     <Skeleton count={3} height={100} className="mt-5" />
